@@ -1,0 +1,22 @@
+@startuml
+actor "指导教师" as Supervisor
+actor "专业负责人" as MajorLeader
+actor "学生" as Student
+participant "任务书页面" as Page
+participant "TaskBookController" as Controller
+participant "TaskBook" as TaskBook
+
+Supervisor -> Page : 填写任务书
+Page -> Controller : submitTaskBook(data)
+Controller -> TaskBook : 保存任务书
+Controller --> MajorLeader : 发送审批任务
+
+MajorLeader -> Controller : approveTaskBook(taskBookId, result)
+alt 审批通过
+  Controller -> TaskBook : 更新为已审批
+  Controller --> Student : 通知查看任务书
+else 退回修改
+  Controller -> TaskBook : 更新为退回修改
+  Controller --> Supervisor : 返回修改意见
+end
+@enduml

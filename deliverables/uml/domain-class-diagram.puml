@@ -1,0 +1,131 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class User {
+  +userId : String
+  +name : String
+  +account : String
+  +status : String
+}
+
+class Role {
+  +roleId : String
+  +roleName : String
+}
+
+class College {
+  +collegeId : String
+  +collegeName : String
+}
+
+class Major {
+  +majorId : String
+  +majorName : String
+}
+
+class Topic {
+  +topicId : String
+  +title : String
+  +sourceType : String
+  +status : String
+}
+
+class TopicSelection {
+  +selectionId : String
+  +priorityNo : int
+  +confirmStatus : String
+}
+
+class TaskBook {
+  +taskBookId : String
+  +status : String
+}
+
+class ProposalReport {
+  +proposalId : String
+  +versionNo : int
+  +status : String
+}
+
+class MidtermReport {
+  +midtermId : String
+  +versionNo : int
+  +status : String
+}
+
+class ThesisMaterial {
+  +materialId : String
+  +materialType : String
+  +versionNo : int
+  +status : String
+}
+
+class ReviewAssignment {
+  +assignmentId : String
+  +status : String
+}
+
+class ReviewRecord {
+  +reviewId : String
+  +score : decimal
+}
+
+class DefenseGroup {
+  +groupId : String
+  +groupName : String
+}
+
+class DefenseRecord {
+  +defenseRecordId : String
+  +defenseScore : decimal
+}
+
+class ScoreSheet {
+  +scoreSheetId : String
+  +guideScore : decimal
+  +reviewScore : decimal
+  +defenseScore : decimal
+  +finalScore : decimal
+}
+
+class DeadlineRule {
+  +ruleId : String
+  +stageCode : String
+}
+
+class ArchiveRecord {
+  +archiveId : String
+  +archiveYear : String
+}
+
+College "1" -- "0..*" Major
+Major "1" -- "0..*" User
+User "0..*" -- "0..*" Role
+
+Topic "1" -- "0..*" TopicSelection
+Topic "1" -- "0..1" TaskBook
+Topic "1" -- "0..*" ProposalReport
+Topic "1" -- "0..*" MidtermReport
+Topic "1" -- "0..*" ThesisMaterial
+Topic "1" -- "0..*" ReviewAssignment
+
+User "1" -- "0..*" Topic : proposer
+User "1" -- "0..*" TopicSelection : student
+User "1" -- "0..*" TaskBook : supervisor
+User "1" -- "0..*" ProposalReport : student
+User "1" -- "0..*" MidtermReport : student
+User "1" -- "0..*" ThesisMaterial : student
+
+ReviewAssignment "1" -- "0..1" ReviewRecord
+ReviewAssignment "1" -- "1" User : reviewer
+
+DefenseGroup "1" -- "0..*" DefenseRecord
+DefenseRecord "1" -- "1" User : student
+
+ScoreSheet "1" -- "1" User : student
+ScoreSheet ..> ReviewRecord
+ScoreSheet ..> DefenseRecord
+
+DeadlineRule ..> College
+ArchiveRecord --> User : student
+@enduml

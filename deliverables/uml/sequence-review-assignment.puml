@@ -1,0 +1,16 @@
+@startuml
+actor "专业负责人" as MajorLeader
+actor "评阅教师" as Reviewer
+participant "评阅分配页" as Page
+participant "ReviewController" as Controller
+participant "ReviewAssignment" as Assignment
+
+MajorLeader -> Page : 选择学生并分配评阅教师
+Page -> Controller : assignReviewer(studentId, reviewerId)
+Controller -> Assignment : 创建评阅分配记录
+Controller --> Reviewer : 发送评阅任务
+
+Reviewer -> Controller : submitReview(score, comment)
+Controller -> Assignment : 更新为已评阅
+Controller --> MajorLeader : 返回评阅完成状态
+@enduml

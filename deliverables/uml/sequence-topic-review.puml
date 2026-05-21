@@ -1,0 +1,25 @@
+@startuml
+actor "指导教师/学生" as Applicant
+participant "课题申报页" as Page
+participant "TopicController" as Controller
+participant "Topic" as Topic
+participant "专业负责人" as MajorLeader
+participant "教学院长" as Dean
+
+Applicant -> Page : 填写并提交课题
+Page -> Controller : submitTopic(formData)
+Controller -> Topic : 创建课题记录
+Topic --> Controller : 待审核
+Controller --> MajorLeader : 发送审核任务
+
+MajorLeader -> Controller : reviewTopic(topicId, result)
+alt 审核通过且需院长发布
+  Controller --> Dean : 发送发布任务
+  Dean -> Controller : publishTopic(topicId)
+  Controller -> Topic : 更新为已发布
+else 审核驳回
+  Controller -> Topic : 更新为退回修改
+end
+
+Controller --> Applicant : 返回处理结果
+@enduml

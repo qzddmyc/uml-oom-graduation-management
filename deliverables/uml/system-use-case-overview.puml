@@ -1,0 +1,79 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "系统管理员" as Admin
+actor "教学秘书" as Secretary
+actor "教学院长" as Dean
+actor "专业负责人" as MajorLeader
+actor "指导教师" as Supervisor
+actor "评阅教师" as Reviewer
+actor "答辩录入员" as DefenseSecretary
+actor "学生" as Student
+
+rectangle "毕业设计（论文）管理系统" {
+  usecase "维护组织与账号" as UC1
+  usecase "设置时间节点与评分规则" as UC2
+  usecase "课题申报与审核发布" as UC3
+  usecase "学生选题与双选确认" as UC4
+  usecase "任务书下达与审批" as UC5
+  usecase "开题报告提交与评价" as UC6
+  usecase "中期检查提交与评价" as UC7
+  usecase "论文提交与审核" as UC8
+  usecase "评阅教师分配与评阅" as UC9
+  usecase "答辩分组与成绩录入" as UC10
+  usecase "总评成绩发布" as UC11
+  usecase "统计、导出与归档查询" as UC12
+  usecase "特殊情况处理" as UC13
+}
+
+Admin --> UC1
+Admin --> UC2
+Admin --> UC12
+Admin --> UC13
+
+Secretary --> UC2
+Secretary --> UC11
+Secretary --> UC12
+Secretary --> UC13
+
+Dean --> UC3
+Dean --> UC12
+
+MajorLeader --> UC3
+MajorLeader --> UC4
+MajorLeader --> UC5
+MajorLeader --> UC7
+MajorLeader --> UC9
+MajorLeader --> UC10
+MajorLeader --> UC11
+MajorLeader --> UC12
+MajorLeader --> UC13
+
+Supervisor --> UC3
+Supervisor --> UC4
+Supervisor --> UC5
+Supervisor --> UC6
+Supervisor --> UC7
+Supervisor --> UC8
+Supervisor --> UC13
+
+Reviewer --> UC6
+Reviewer --> UC7
+Reviewer --> UC9
+
+DefenseSecretary --> UC10
+
+Student --> UC3
+Student --> UC4
+Student --> UC6
+Student --> UC7
+Student --> UC8
+Student --> UC13
+
+UC11 .> UC9 : <<depends>>
+UC11 .> UC10 : <<depends>>
+UC6 .> UC5 : <<depends>>
+UC7 .> UC6 : <<depends>>
+UC8 .> UC7 : <<depends>>
+@enduml

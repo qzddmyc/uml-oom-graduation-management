@@ -1,0 +1,41 @@
+@startuml
+package "organization" {
+  class User
+  class Role
+  class College
+  class Major
+}
+
+package "topic" {
+  class Topic
+  class TopicSelection
+  class TopicReview
+}
+
+package "process" {
+  class TaskBook
+  class ProposalReport
+  class MidtermReport
+  class ThesisMaterial
+}
+
+package "evaluation" {
+  class ReviewAssignment
+  class ReviewRecord
+  class DefenseGroup
+  class DefenseRecord
+  class ScoreSheet
+}
+
+package "statistics" {
+  class ExportTask
+  class ArchiveRecord
+  class StatisticsService
+}
+
+organization ..> topic
+topic ..> process
+process ..> evaluation
+evaluation ..> statistics
+statistics ..> organization
+@enduml

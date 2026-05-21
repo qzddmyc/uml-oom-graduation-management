@@ -1,0 +1,25 @@
+@startuml
+actor "学生" as Student
+actor "指导教师" as Supervisor
+actor "评价教师" as Evaluator
+participant "开题页面" as Page
+participant "ProposalController" as Controller
+participant "ProposalReport" as Proposal
+
+Student -> Page : 提交开题报告
+Page -> Controller : submitProposal(data)
+Controller -> Proposal : 保存版本
+Controller --> Supervisor : 发送审核任务
+Controller --> Evaluator : 发送评价任务
+
+Supervisor -> Controller : reviewProposal(proposalId, result)
+Evaluator -> Controller : evaluateProposal(proposalId, score, comment)
+
+alt 指导教师通过且评价完成
+  Controller -> Proposal : 更新为已通过
+else 任一方退回
+  Controller -> Proposal : 更新为退回修改
+end
+
+Controller --> Student : 返回处理状态
+@enduml

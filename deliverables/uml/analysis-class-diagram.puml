@@ -1,0 +1,63 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package "Boundary" {
+  class TopicReviewPage
+  class SelectionPage
+  class TaskBookApprovalPage
+  class ProposalReviewPage
+  class MidtermReviewPage
+  class ReviewAssignmentPage
+  class ScorePublishPage
+}
+
+package "Control" {
+  class TopicController
+  class SelectionController
+  class TaskBookController
+  class ProposalController
+  class MidtermController
+  class ReviewController
+  class ScoreController
+}
+
+package "Entity" {
+  class Topic
+  class TopicSelection
+  class TaskBook
+  class ProposalReport
+  class MidtermReport
+  class ReviewAssignment
+  class ReviewRecord
+  class DefenseRecord
+  class ScoreSheet
+}
+
+TopicReviewPage --> TopicController
+SelectionPage --> SelectionController
+TaskBookApprovalPage --> TaskBookController
+ProposalReviewPage --> ProposalController
+MidtermReviewPage --> MidtermController
+ReviewAssignmentPage --> ReviewController
+ScorePublishPage --> ScoreController
+
+TopicController --> Topic
+SelectionController --> TopicSelection
+SelectionController --> Topic
+TaskBookController --> TaskBook
+ProposalController --> ProposalReport
+MidtermController --> MidtermReport
+ReviewController --> ReviewAssignment
+ReviewController --> ReviewRecord
+ScoreController --> ScoreSheet
+ScoreController --> DefenseRecord
+ScoreController --> ReviewRecord
+
+Topic ..> TopicSelection
+TaskBook ..> Topic
+ProposalReport ..> Topic
+MidtermReport ..> Topic
+ReviewAssignment ..> Topic
+ScoreSheet ..> ReviewRecord
+ScoreSheet ..> DefenseRecord
+@enduml

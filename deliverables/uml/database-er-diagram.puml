@@ -1,0 +1,134 @@
+@startuml
+entity user {
+  * user_id : varchar
+  --
+  * college_id : varchar
+  * major_id : varchar
+  account : varchar
+  name : varchar
+  status : varchar
+}
+
+entity role {
+  * role_id : varchar
+  --
+  role_name : varchar
+}
+
+entity user_role {
+  * id : varchar
+  --
+  * user_id : varchar
+  * role_id : varchar
+}
+
+entity topic {
+  * topic_id : varchar
+  --
+  proposer_id : varchar
+  major_id : varchar
+  source_type : varchar
+  status : varchar
+}
+
+entity topic_selection {
+  * selection_id : varchar
+  --
+  * topic_id : varchar
+  * student_id : varchar
+  confirm_status : varchar
+}
+
+entity task_book {
+  * task_book_id : varchar
+  --
+  * topic_id : varchar
+  * student_id : varchar
+  supervisor_id : varchar
+  status : varchar
+}
+
+entity proposal_report {
+  * proposal_id : varchar
+  --
+  * topic_id : varchar
+  * student_id : varchar
+  status : varchar
+}
+
+entity midterm_report {
+  * midterm_id : varchar
+  --
+  * topic_id : varchar
+  * student_id : varchar
+  status : varchar
+}
+
+entity thesis_material {
+  * material_id : varchar
+  --
+  * topic_id : varchar
+  * student_id : varchar
+  material_type : varchar
+  status : varchar
+}
+
+entity review_assignment {
+  * assignment_id : varchar
+  --
+  * topic_id : varchar
+  * student_id : varchar
+  reviewer_id : varchar
+}
+
+entity review_record {
+  * review_record_id : varchar
+  --
+  * assignment_id : varchar
+  score : decimal
+}
+
+entity defense_group {
+  * group_id : varchar
+  --
+  group_name : varchar
+}
+
+entity defense_record {
+  * defense_record_id : varchar
+  --
+  * group_id : varchar
+  * student_id : varchar
+  defense_score : decimal
+}
+
+entity score_sheet {
+  * score_sheet_id : varchar
+  --
+  * student_id : varchar
+  guide_score : decimal
+  review_score : decimal
+  defense_score : decimal
+  final_score : decimal
+}
+
+entity archive_record {
+  * archive_id : varchar
+  --
+  * student_id : varchar
+  archive_year : varchar
+}
+
+user ||--o{ user_role
+role ||--o{ user_role
+topic ||--o{ topic_selection
+topic ||--o| task_book
+topic ||--o{ proposal_report
+topic ||--o{ midterm_report
+topic ||--o{ thesis_material
+topic ||--o{ review_assignment
+review_assignment ||--o| review_record
+defense_group ||--o{ defense_record
+user ||--o{ score_sheet
+user ||--o{ archive_record
+@enduml

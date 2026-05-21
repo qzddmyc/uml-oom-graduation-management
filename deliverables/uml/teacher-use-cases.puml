@@ -1,0 +1,36 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "指导教师" as Supervisor
+actor "评阅教师" as Reviewer
+
+rectangle "教师侧用例" {
+  usecase "申报盲选课题" as UC1
+  usecase "申报指定学生课题" as UC2
+  usecase "确认学生选题" as UC3
+  usecase "下达任务书" as UC4
+  usecase "审核开题报告" as UC5
+  usecase "评价中期检查" as UC6
+  usecase "审核论文初稿/定稿" as UC7
+  usecase "填写指导成绩" as UC8
+  usecase "评阅论文并评分" as UC9
+  usecase "审核修改申请" as UC10
+  usecase "导出学生材料" as UC11
+}
+
+Supervisor --> UC1
+Supervisor --> UC2
+Supervisor --> UC3
+Supervisor --> UC4
+Supervisor --> UC5
+Supervisor --> UC6
+Supervisor --> UC7
+Supervisor --> UC8
+Supervisor --> UC10
+Supervisor --> UC11
+
+Reviewer --> UC5
+Reviewer --> UC6
+Reviewer --> UC9
+@enduml

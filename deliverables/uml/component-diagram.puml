@@ -1,0 +1,24 @@
+@startuml
+component "前端原型应用" as Frontend
+component "路由与权限构件" as Auth
+component "课题与选题构件" as TopicComp
+component "过程材料构件" as ProcessComp
+component "评阅答辩构件" as EvalComp
+component "成绩统计构件" as ScoreComp
+component "导出归档构件" as ArchiveComp
+component "Mock 数据构件" as Mock
+
+Frontend --> Auth
+Frontend --> TopicComp
+Frontend --> ProcessComp
+Frontend --> EvalComp
+Frontend --> ScoreComp
+Frontend --> ArchiveComp
+
+Auth --> Mock
+TopicComp --> Mock
+ProcessComp --> Mock
+EvalComp --> Mock
+ScoreComp --> Mock
+ArchiveComp --> Mock
+@enduml

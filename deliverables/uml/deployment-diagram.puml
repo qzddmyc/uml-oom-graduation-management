@@ -1,0 +1,29 @@
+@startuml
+node "学生/教师/管理人员浏览器" as Browser
+
+node "前端原型应用\n(Vue 3 + JavaScript)" as Frontend {
+  artifact "页面资源"
+  artifact "路由与权限模块"
+  artifact "Mock 数据模块"
+}
+
+node "业务应用服务\n(逻辑部署抽象)" as AppServer {
+  artifact "课题与选题服务"
+  artifact "过程材料服务"
+  artifact "评阅答辩服务"
+  artifact "成绩统计服务"
+}
+
+database "MySQL 数据库\n(逻辑设计层)" as DB
+node "文件存储服务" as FileStore
+
+Browser --> Frontend : HTTP/HTTPS
+Frontend --> AppServer : REST API
+AppServer --> DB : SQL
+AppServer --> FileStore : 文件读写
+
+note right of Frontend
+课程演示阶段可仅运行前端原型
+并通过 Mock 数据完成流程展示
+end note
+@enduml

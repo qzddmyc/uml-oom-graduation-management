@@ -1,0 +1,21 @@
+@startuml
+actor "学生" as Student
+actor "指导教师" as Supervisor
+actor "专业负责人" as MajorLeader
+participant "选题页面" as Page
+participant "SelectionController" as Controller
+participant "TopicSelection" as Selection
+
+Student -> Page : 提交选题志愿
+Page -> Controller : createSelection(topicId, studentId)
+Controller -> Selection : 保存志愿记录
+Controller --> Supervisor : 发送确认任务
+
+Supervisor -> Controller : confirmStudent(selectionId)
+Controller -> Selection : 更新为教师已确认
+Controller --> MajorLeader : 发送双选审核任务
+
+MajorLeader -> Controller : approveSelection(selectionId)
+Controller -> Selection : 更新为已生效
+Controller --> Student : 返回正式选题结果
+@enduml

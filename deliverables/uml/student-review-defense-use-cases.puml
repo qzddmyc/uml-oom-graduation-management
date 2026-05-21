@@ -1,0 +1,35 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "学生" as Student
+actor "评阅教师" as Reviewer
+actor "答辩录入员" as DefenseSecretary
+
+rectangle "学生 / 评阅 / 答辩侧用例" {
+  usecase "学生申报课题" as UC1
+  usecase "选择课题" as UC2
+  usecase "查看任务书" as UC3
+  usecase "提交开题报告" as UC4
+  usecase "提交中期检查" as UC5
+  usecase "提交论文初稿/定稿" as UC6
+  usecase "申请材料修改" as UC7
+  usecase "申请校外毕业设计" as UC8
+  usecase "评阅论文" as UC9
+  usecase "录入答辩成绩" as UC10
+  usecase "查询成绩与归档信息" as UC11
+}
+
+Student --> UC1
+Student --> UC2
+Student --> UC3
+Student --> UC4
+Student --> UC5
+Student --> UC6
+Student --> UC7
+Student --> UC8
+Student --> UC11
+
+Reviewer --> UC9
+DefenseSecretary --> UC10
+@enduml

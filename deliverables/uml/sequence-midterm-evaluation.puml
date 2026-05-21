@@ -1,0 +1,23 @@
+@startuml
+actor "学生" as Student
+actor "指导教师" as Supervisor
+actor "评价教师" as Evaluator
+actor "专业负责人" as MajorLeader
+participant "中期页面" as Page
+participant "MidtermController" as Controller
+participant "MidtermReport" as Midterm
+
+Student -> Page : 提交中期检查
+Page -> Controller : submitMidterm(data)
+Controller -> Midterm : 保存中期记录
+Controller --> Supervisor : 发送评价任务
+Controller --> Evaluator : 发送补充评价任务
+
+Supervisor -> Controller : reviewMidterm(midtermId, result)
+Evaluator -> Controller : evaluateMidterm(midtermId, result)
+Controller --> MajorLeader : 发送复核任务
+
+MajorLeader -> Controller : approveMidterm(midtermId, result)
+Controller -> Midterm : 更新最终状态
+Controller --> Student : 返回处理中结果
+@enduml

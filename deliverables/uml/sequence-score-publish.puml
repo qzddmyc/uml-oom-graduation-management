@@ -1,0 +1,18 @@
+@startuml
+actor "答辩录入员" as DefenseSecretary
+actor "教学秘书/专业负责人" as Publisher
+participant "答辩页面" as DefensePage
+participant "ScoreController" as Controller
+participant "DefenseRecord" as DefenseRecord
+participant "ScoreSheet" as ScoreSheet
+
+DefenseSecretary -> DefensePage : 录入答辩成绩
+DefensePage -> Controller : saveDefenseScore(studentId, score)
+Controller -> DefenseRecord : 保存答辩成绩
+
+Publisher -> Controller : publishScore(studentId)
+Controller -> ScoreSheet : 汇总指导、评阅、答辩成绩
+Controller -> ScoreSheet : 计算 finalScore
+Controller -> ScoreSheet : 更新为已发布
+Controller --> Publisher : 返回发布结果
+@enduml

@@ -16,6 +16,9 @@
 ```text
 uml-oom-graduation-management
 ├── README.md
+├── deliverables
+│   ├── docs
+│   └── uml
 ├── docs
 │   ├── Blueprint.md
 │   ├── Requirement.md
@@ -32,6 +35,8 @@ uml-oom-graduation-management
 - `plans/rough-implementation-plan.md`：项目总体粗略规划
 - `plans/frontend-page-plan.md`：前端页面与原型规划
 - `plans/project-todo.md`：完整任务清单与进度跟踪
+- `deliverables/docs/`：需求分析、系统设计说明等正式文字成果
+- `deliverables/uml/`：UML、ER 图与部署图等正式图形成果
 
 ## 当前技术路线
 
