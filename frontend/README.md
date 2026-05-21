@@ -34,13 +34,13 @@ frontend
 
 ## 本地运行
 
-1. 进入目录：`Set-Location .\frontend`
+1. 进入目录：`cd ./frontend`
 2. 安装依赖：`npm install`
 3. 启动开发环境：`npm run dev`
 
 ## 打包步骤
 
-1. 进入目录：`Set-Location .\frontend`
+1. 进入目录：`cd ./frontend`
 2. 如未安装依赖，先执行：`npm install`
 3. 执行构建：`npm run build`
 4. 构建结果输出到：`frontend/dist/`
