@@ -1,21 +1,22 @@
 # 项目索引
 
-本文件用于快速定位本仓库的主要设计文档、规划文件与 UML 图。
+本文件用于快速定位本仓库的主要设计文档、规划文件、UML 图与前端原型入口。
 
 ## 1. 建议阅读顺序
 
 1. [`docs/Requirement.md`](docs/Requirement.md)：课程要求与任务范围
-2. [`README.md`](README.md)：仓库简介与当前技术路线
+2. [`README.md`](README.md)：仓库简介、`index.md` 入口说明与前端打包步骤
 3. [`plans/project-todo.md`](plans/project-todo.md)：总任务清单与完成状态
 4. [`plans/rough-implementation-plan.md`](plans/rough-implementation-plan.md)：项目总体粗略规划
-5. [`deliverables/docs/requirements-analysis.md`](deliverables/docs/requirements-analysis.md)：需求获取与问题分析
-6. [`deliverables/docs/use-case-analysis.md`](deliverables/docs/use-case-analysis.md)：参与者与用例分析
-7. [`deliverables/docs/use-case-realizations.md`](deliverables/docs/use-case-realizations.md)：重点用例实现
-8. [`deliverables/docs/domain-class-design.md`](deliverables/docs/domain-class-design.md)：领域分析与类图设计
-9. [`deliverables/docs/system-design.md`](deliverables/docs/system-design.md)：技术方案、包图与构件图设计
-10. [`deliverables/docs/database-design.md`](deliverables/docs/database-design.md)：数据库设计
-11. [`deliverables/docs/deployment-design.md`](deliverables/docs/deployment-design.md)：部署设计与运行环境说明
-12. [`plans/frontend-page-plan.md`](plans/frontend-page-plan.md)：前端页面规划
+5. [`plans/frontend-page-plan.md`](plans/frontend-page-plan.md)：前端页面规划与当前实现同步
+6. [`frontend/README.md`](frontend/README.md)：前端原型说明与打包步骤
+7. [`deliverables/docs/requirements-analysis.md`](deliverables/docs/requirements-analysis.md)：需求获取与问题分析
+8. [`deliverables/docs/use-case-analysis.md`](deliverables/docs/use-case-analysis.md)：参与者与用例分析
+9. [`deliverables/docs/use-case-realizations.md`](deliverables/docs/use-case-realizations.md)：重点用例实现
+10. [`deliverables/docs/domain-class-design.md`](deliverables/docs/domain-class-design.md)：领域分析与类图设计
+11. [`deliverables/docs/system-design.md`](deliverables/docs/system-design.md)：技术方案、包图与构件图设计
+12. [`deliverables/docs/database-design.md`](deliverables/docs/database-design.md)：数据库设计
+13. [`deliverables/docs/deployment-design.md`](deliverables/docs/deployment-design.md)：部署设计与运行环境说明
 
 ## 2. 根目录说明
 
@@ -26,6 +27,7 @@
     │   ├── docs
     │   └── uml
     ├── docs
+    ├── frontend
     ├── plans
     ├── index.md
     └── README.md
@@ -67,9 +69,20 @@
 | [`deliverables/docs/database-design.md`](deliverables/docs/database-design.md) | 数据表、字段、关系、ER 图说明 |
 | [`deliverables/docs/deployment-design.md`](deliverables/docs/deployment-design.md) | 部署方案与运行环境说明 |
 
-## 6. UML 与设计图索引
+## 6. 前端原型目录
 
-### 6.1 用例图
+| 文件 / 目录 | 作用 |
+|---|---|
+| [`frontend/README.md`](frontend/README.md) | 前端原型说明、运行与打包步骤 |
+| `frontend/src/router/` | 路由、权限和页面入口 |
+| `frontend/src/views/` | 登录页、仪表盘、业务页与工作台页面 |
+| `frontend/src/mock/` | mock 数据源、模块与统一模拟请求封装 |
+| `frontend/src/components/common/` | 通用统计卡片、筛选栏、表格卡片、信息面板等组件 |
+| `frontend/dist/` | 生产构建后的静态文件输出目录 |
+
+## 7. UML 与设计图索引
+
+### 7.1 用例图
 
 | 文件 | 说明 |
 |---|---|
@@ -78,14 +91,14 @@
 | [`deliverables/uml/teacher-use-cases.puml`](deliverables/uml/teacher-use-cases.puml) | 教师侧用例图 |
 | [`deliverables/uml/student-review-defense-use-cases.puml`](deliverables/uml/student-review-defense-use-cases.puml) | 学生 / 评阅 / 答辩侧用例图 |
 
-### 6.2 类图
+### 7.2 类图
 
 | 文件 | 说明 |
 |---|---|
 | [`deliverables/uml/domain-class-diagram.puml`](deliverables/uml/domain-class-diagram.puml) | 领域类图 |
 | [`deliverables/uml/analysis-class-diagram.puml`](deliverables/uml/analysis-class-diagram.puml) | 分析类图 / 设计类图 |
 
-### 6.3 顺序图
+### 7.3 顺序图
 
 | 文件 | 说明 |
 |---|---|
@@ -97,7 +110,7 @@
 | [`deliverables/uml/sequence-review-assignment.puml`](deliverables/uml/sequence-review-assignment.puml) | 评阅教师分配 |
 | [`deliverables/uml/sequence-score-publish.puml`](deliverables/uml/sequence-score-publish.puml) | 答辩成绩录入与总评发布 |
 
-### 6.4 活动图与状态图
+### 7.4 活动图与状态图
 
 | 文件 | 说明 |
 |---|---|
@@ -106,7 +119,7 @@
 | [`deliverables/uml/state-topic-lifecycle.puml`](deliverables/uml/state-topic-lifecycle.puml) | 课题状态图 |
 | [`deliverables/uml/state-paper-material-lifecycle.puml`](deliverables/uml/state-paper-material-lifecycle.puml) | 论文材料状态图 |
 
-### 6.5 系统设计图
+### 7.5 系统设计图
 
 | 文件 | 说明 |
 |---|---|
@@ -115,11 +128,11 @@
 | [`deliverables/uml/database-er-diagram.puml`](deliverables/uml/database-er-diagram.puml) | 数据库 ER 图 |
 | [`deliverables/uml/deployment-diagram.puml`](deliverables/uml/deployment-diagram.puml) | 部署图 |
 
-## 7. 当前进度位置
+## 8. 当前进度位置
 
-截至目前，**前端页面设计之前的分析与建模内容已完成**，下一阶段可以继续：
+截至目前，**分析建模成果与前端 mock 原型均已形成**，当前后续重点为：
 
-1. 细化页面信息架构
-2. 细化路由与权限对照表
-3. 设计页面原型与界面截图
-4. 开始整理设计报告正文
+1. 整理界面截图与展示说明
+2. 补齐需求获取实施结果
+3. 编写设计报告正文
+4. 准备 PPT 与录屏材料

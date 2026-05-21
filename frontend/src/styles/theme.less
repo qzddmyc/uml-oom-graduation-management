@@ -1,0 +1,43 @@
+:root {
+  --app-color-ink: @ink;
+  --app-color-paper: @paper;
+  --app-color-cream: @cream;
+  --app-color-accent: @accent;
+  --app-color-muted: @muted;
+
+  --el-color-primary: @accent;
+  --el-color-primary-light-3: lighten(@accent, 10%);
+  --el-color-primary-light-5: lighten(@accent, 18%);
+  --el-color-primary-light-8: lighten(@accent, 30%);
+  --el-color-primary-dark-2: darken(@accent, 6%);
+  --el-bg-color: #fffdf8;
+  --el-bg-color-page: @paper;
+  --el-bg-color-overlay: #fffdfa;
+  --el-fill-color-light: fade(@cream, 50%);
+  --el-fill-color-blank: #fffdf8;
+  --el-text-color-primary: @ink;
+  --el-text-color-regular: @ink-soft;
+  --el-text-color-secondary: @muted;
+  --el-border-color: @border-color;
+  --el-border-color-light: fade(@ink, 6%);
+  --el-border-radius-base: 14px;
+  --el-border-radius-small: 10px;
+  --el-box-shadow-light: 0 18px 36px fade(@ink, 8%);
+  --el-font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: @ink;
+  background: @paper;
+  font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

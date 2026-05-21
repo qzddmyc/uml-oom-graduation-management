@@ -1,0 +1,74 @@
+@import './theme.less';
+@import './reset.less';
+
+#app {
+  min-height: 100vh;
+}
+
+.page-card {
+  border-radius: 20px;
+}
+
+.page-card > .el-card__body,
+.block-card > .el-card__body,
+.workspace-card > .el-card__body,
+.dashboard-card > .el-card__body {
+  overflow: hidden;
+}
+
+.el-table {
+  --el-table-tr-bg-color: #fffdf8;
+  --el-table-row-hover-bg-color: mix(@cream, #fffdf8, 38%);
+}
+
+.el-table .el-table__row > td.el-table__cell {
+  background-color: var(--el-table-tr-bg-color);
+}
+
+.el-table .el-table__header-wrapper th.el-table__cell,
+.el-table .el-table__fixed-header-wrapper th.el-table__cell,
+.el-table .el-table__fixed-body-wrapper td.el-table__cell,
+.el-table .el-table__fixed-footer-wrapper td.el-table__cell {
+  background-color: var(--el-table-tr-bg-color) !important;
+}
+
+.el-table .el-table__row:hover > td.el-table__cell,
+.el-table .el-table__body tr.hover-row > td.el-table__cell,
+.el-table .el-table__body tr.current-row > td.el-table__cell,
+.el-table .el-table__fixed-body-wrapper tr.hover-row > td.el-table__cell,
+.el-table .el-table__fixed-body-wrapper tr.current-row > td.el-table__cell {
+  background-color: var(--el-table-row-hover-bg-color) !important;
+}
+
+.el-table .el-table__body-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.el-table .el-table__fixed,
+.el-table .el-table__fixed-right {
+  z-index: 2;
+  background-color: var(--el-table-tr-bg-color) !important;
+}
+
+.el-table .el-table__fixed::before,
+.el-table .el-table__fixed-right::before,
+.el-table .el-table__fixed-right-patch {
+  background-color: var(--el-table-tr-bg-color) !important;
+}
+
+.el-table .el-table-fixed-column--left,
+.el-table .el-table-fixed-column--right,
+.el-table .el-table__fixed-right .el-table__fixed-body-wrapper,
+.el-table .el-table__fixed .el-table__fixed-body-wrapper {
+  background-color: var(--el-table-tr-bg-color) !important;
+}
+
+.el-table .el-table__row:hover .el-table-fixed-column--left,
+.el-table .el-table__row:hover .el-table-fixed-column--right,
+.el-table .el-table__body tr.hover-row .el-table-fixed-column--left,
+.el-table .el-table__body tr.hover-row .el-table-fixed-column--right,
+.el-table .el-table__fixed-body-wrapper tr.hover-row .el-table-fixed-column--left,
+.el-table .el-table__fixed-body-wrapper tr.hover-row .el-table-fixed-column--right {
+  background-color: var(--el-table-row-hover-bg-color) !important;
+}

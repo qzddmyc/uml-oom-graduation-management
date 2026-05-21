@@ -11,7 +11,7 @@ actor "评阅教师" as Reviewer
 actor "答辩录入员" as DefenseSecretary
 actor "学生" as Student
 
-rectangle "毕业设计（论文）管理系统" {
+rectangle "毕业设计管理系统" {
   usecase "维护组织与账号" as UC1
   usecase "设置时间节点与评分规则" as UC2
   usecase "课题申报与审核发布" as UC3
