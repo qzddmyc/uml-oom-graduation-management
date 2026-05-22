@@ -72,3 +72,19 @@
 .el-table .el-table__fixed-body-wrapper tr.hover-row .el-table-fixed-column--right {
   background-color: var(--el-table-row-hover-bg-color) !important;
 }
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  height: 3px;
+  background: linear-gradient(90deg, lighten(@accent, 6%), @accent);
+  box-shadow: 0 0 10px fade(@accent, 24%);
+}
+
+#nprogress .peg {
+  box-shadow:
+    0 0 10px fade(@accent, 30%),
+    0 0 5px fade(@accent, 22%);
+}

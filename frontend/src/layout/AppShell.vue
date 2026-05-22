@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { Fold, Expand, SwitchButton } from '@element-plus/icons-vue'
 import { APP_TITLE } from '@/constants/app'
@@ -12,6 +12,16 @@ import { logout, switchRole } from '@/api/auth'
 const route = useRoute()
 const router = useRouter()
 const appStore = useAppStore()
+const isMobile = ref(false)
+const mobileSidebarOpen = ref(false)
+
+function updateViewport() {
+  isMobile.value = window.innerWidth <= 1100
+
+  if (!isMobile.value) {
+    mobileSidebarOpen.value = false
+  }
+}
 
 function hasAccess(roles = []) {
   if (!roles.length) {
@@ -47,6 +57,8 @@ const menuGroups = computed(() => {
 })
 
 const currentRoute = computed(() => featureRoutes.find((item) => item.name === route.name))
+const shouldRenderSidebar = computed(() => isMobile.value || !appStore.sidebarCollapsed)
+const sidebarVisible = computed(() => (isMobile.value ? mobileSidebarOpen.value : !appStore.sidebarCollapsed))
 
 const breadcrumbItems = computed(() => {
   if (!currentRoute.value) {
@@ -73,11 +85,56 @@ async function handleLogout() {
   appStore.clearRole()
   router.replace('/login')
 }
+
+function handleSidebarToggle() {
+  if (isMobile.value) {
+    mobileSidebarOpen.value = !mobileSidebarOpen.value
+    return
+  }
+
+  appStore.toggleSidebar()
+}
+
+function closeMobileSidebar() {
+  if (isMobile.value) {
+    mobileSidebarOpen.value = false
+  }
+}
+
+watch(
+  () => route.fullPath,
+  () => {
+    closeMobileSidebar()
+  },
+)
+
+onMounted(() => {
+  updateViewport()
+  window.addEventListener('resize', updateViewport)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', updateViewport)
+})
 </script>
 
 <template>
-  <div class="app-shell" :class="{ 'app-shell--sidebar-hidden': appStore.sidebarCollapsed }">
-    <aside v-if="!appStore.sidebarCollapsed" class="app-shell__aside">
+  <div
+    class="app-shell"
+    :class="{
+      'app-shell--sidebar-hidden': !isMobile && appStore.sidebarCollapsed,
+      'app-shell--mobile-menu-open': isMobile && mobileSidebarOpen,
+    }"
+  >
+    <button
+      v-if="isMobile && mobileSidebarOpen"
+      type="button"
+      class="app-shell__mask"
+      aria-label="关闭侧边导航"
+      @click="closeMobileSidebar"
+    ></button>
+
+    <aside v-if="shouldRenderSidebar" class="app-shell__aside">
       <div class="brand">
         <div class="brand__mark">
           <img :src="brandMark" alt="系统标识" />
@@ -97,6 +154,7 @@ async function handleLogout() {
             :to="getRoutePath(item)"
             class="nav-link"
             :class="{ 'is-active': route.name === item.name }"
+            @click="closeMobileSidebar"
           >
             <span class="nav-link__dot"></span>
             <span>{{ item.meta.title }}</span>
@@ -108,9 +166,9 @@ async function handleLogout() {
     <div class="app-shell__main">
       <header class="app-shell__header">
         <div class="header-left">
-          <el-button circle text class="header-icon" @click="appStore.toggleSidebar()">
+          <el-button circle text class="header-icon" @click="handleSidebarToggle">
             <el-icon>
-              <Fold v-if="!appStore.sidebarCollapsed" />
+              <Fold v-if="sidebarVisible" />
               <Expand v-else />
             </el-icon>
           </el-button>
@@ -176,6 +234,11 @@ async function handleLogout() {
   background: linear-gradient(180deg, lighten(@ink, 3%), @ink);
   border-right: 1px solid fade(#ffffff, 10%);
   color: fade(#ffffff, 82%);
+  z-index: 30;
+}
+
+.app-shell__mask {
+  display: none;
 }
 
 .brand {
@@ -330,8 +393,29 @@ async function handleLogout() {
     grid-template-columns: 1fr;
   }
 
+  .app-shell__mask {
+    display: block;
+    position: fixed;
+    inset: 0;
+    border: none;
+    padding: 0;
+    background: fade(@ink, 42%);
+    z-index: 20;
+  }
+
   .app-shell__aside {
-    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: min(280px, 82vw);
+    transform: translateX(-100%);
+    transition: transform 0.24s ease;
+  }
+
+  .app-shell--mobile-menu-open .app-shell__aside {
+    transform: translateX(0);
+    box-shadow: 0 24px 48px fade(@ink, 18%);
   }
 
   .app-shell__header {

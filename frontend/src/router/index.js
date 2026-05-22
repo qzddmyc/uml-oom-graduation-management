@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { APP_TITLE } from '@/constants/app'
 import { routes } from './routes'
 import { useAppStore } from '@/stores/app'
+import { doneProgress, resetProgress, startProgress } from '@/utils/progress'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,8 +14,12 @@ const router = createRouter({
   },
 })
 
-router.beforeEach((to) => {
+router.beforeEach((to, from) => {
   const appStore = useAppStore()
+
+  if (to.fullPath !== from.fullPath) {
+    startProgress()
+  }
 
   document.title = to.meta?.title ? `${to.meta.title} - ${APP_TITLE}` : APP_TITLE
 
@@ -52,6 +57,16 @@ router.beforeEach((to) => {
   }
 
   return true
+})
+
+router.afterEach(() => {
+  window.setTimeout(() => {
+    doneProgress()
+  }, 80)
+})
+
+router.onError(() => {
+  resetProgress()
 })
 
 export default router

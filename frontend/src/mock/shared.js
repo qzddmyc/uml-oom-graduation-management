@@ -1,4 +1,4 @@
-const DEFAULT_DELAY = 160
+const DEFAULT_DELAY = 420
 
 function cloneData(data) {
   if (typeof structuredClone === 'function') {

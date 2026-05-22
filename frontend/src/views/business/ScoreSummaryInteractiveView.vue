@@ -114,17 +114,17 @@ onMounted(() => {
           <el-table-column prop="student" label="学生" min-width="120" />
           <el-table-column label="指导成绩" min-width="140">
             <template #default="{ row }">
-              <el-input-number v-model="row.supervisor" :min="0" :max="100" />
+              <el-input-number v-model="row.supervisor" :min="0" :max="100" size="small" class="score-input" />
             </template>
           </el-table-column>
           <el-table-column label="评阅成绩" min-width="140">
             <template #default="{ row }">
-              <el-input-number v-model="row.review" :min="0" :max="100" />
+              <el-input-number v-model="row.review" :min="0" :max="100" size="small" class="score-input" />
             </template>
           </el-table-column>
           <el-table-column label="答辩成绩" min-width="140">
             <template #default="{ row }">
-              <el-input-number v-model="row.defense" :min="0" :max="100" />
+              <el-input-number v-model="row.defense" :min="0" :max="100" size="small" class="score-input" />
             </template>
           </el-table-column>
           <el-table-column prop="final" label="总评" min-width="100" />
@@ -222,6 +222,26 @@ h2 {
   span {
     color: @ink;
   }
+}
+
+:deep(.score-input) {
+  width: 128px;
+}
+
+:deep(.score-input .el-input-number__decrease),
+:deep(.score-input .el-input-number__increase) {
+  width: 26px;
+  overflow: visible;
+}
+
+:deep(.score-input .el-input-number__decrease [class*='el-icon']),
+:deep(.score-input .el-input-number__increase [class*='el-icon']) {
+  transform: scale(0.72);
+  transform-origin: center;
+}
+
+:deep(.score-input .el-input__inner) {
+  font-size: 14px;
 }
 
 @media (max-width: 1100px) {
