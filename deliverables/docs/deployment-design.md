@@ -59,9 +59,11 @@
 ## 6. 部署图成果清单
 
 ```text
-    deliverables
-    └── uml
-        └── deployment-diagram.puml
+deliverables
+  ├── uml
+  │   └── deployment-diagram.puml
+  └── render
+      └── deployment-diagram.png
 ```
 
 ## 7. 结论

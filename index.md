@@ -21,16 +21,17 @@
 ## 2. 根目录说明
 
 ```text
-    .
-    ├── .github
-    ├── deliverables
-    │   ├── docs
-    │   └── uml
-    ├── docs
-    ├── frontend
-    ├── plans
-    ├── index.md
-    └── README.md
+.
+├── .github
+├── deliverables
+│   ├── docs
+│   ├── render
+│   └── uml
+├── docs
+├── frontend
+├── plans
+├── index.md
+└── README.md
 ```
 
 ## 3. docs 目录
@@ -54,7 +55,8 @@
 | 文件 | 作用 |
 |---|---|
 | `deliverables/docs/` | 正式文字成果目录 |
-| `deliverables/uml/` | UML、ER 与部署图目录 |
+| `deliverables/uml/` | PlantUML 源文件目录 |
+| `deliverables/render/` | 由 PlantUML 源文件渲染生成的图片目录 |
 
 ### 5.1 deliverables/docs
 
@@ -84,49 +86,49 @@
 
 ### 7.1 用例图
 
-| 文件 | 说明 |
-|---|---|
-| [`deliverables/uml/system-use-case-overview.puml`](deliverables/uml/system-use-case-overview.puml) | 系统总用例图 |
-| [`deliverables/uml/management-use-cases.puml`](deliverables/uml/management-use-cases.puml) | 管理侧用例图 |
-| [`deliverables/uml/teacher-use-cases.puml`](deliverables/uml/teacher-use-cases.puml) | 教师侧用例图 |
-| [`deliverables/uml/student-review-defense-use-cases.puml`](deliverables/uml/student-review-defense-use-cases.puml) | 学生 / 评阅 / 答辩侧用例图 |
+| 文件 | 说明 | 渲染图 |
+|---|---|---|
+| [`deliverables/uml/system-use-case-overview.puml`](deliverables/uml/system-use-case-overview.puml) | 系统总用例图 | [`system-use-case-overview.png`](deliverables/render/system-use-case-overview.png) |
+| [`deliverables/uml/management-use-cases.puml`](deliverables/uml/management-use-cases.puml) | 管理侧用例图 | [`management-use-cases.png`](deliverables/render/management-use-cases.png) |
+| [`deliverables/uml/teacher-use-cases.puml`](deliverables/uml/teacher-use-cases.puml) | 教师侧用例图 | [`teacher-use-cases.png`](deliverables/render/teacher-use-cases.png) |
+| [`deliverables/uml/student-review-defense-use-cases.puml`](deliverables/uml/student-review-defense-use-cases.puml) | 学生 / 评阅 / 答辩侧用例图 | [`student-review-defense-use-cases.png`](deliverables/render/student-review-defense-use-cases.png) |
 
 ### 7.2 类图
 
-| 文件 | 说明 |
-|---|---|
-| [`deliverables/uml/domain-class-diagram.puml`](deliverables/uml/domain-class-diagram.puml) | 领域类图 |
-| [`deliverables/uml/analysis-class-diagram.puml`](deliverables/uml/analysis-class-diagram.puml) | 分析类图 / 设计类图 |
+| 文件 | 说明 | 渲染图 |
+|---|---|---|
+| [`deliverables/uml/domain-class-diagram.puml`](deliverables/uml/domain-class-diagram.puml) | 领域类图 | [`domain-class-diagram.png`](deliverables/render/domain-class-diagram.png) |
+| [`deliverables/uml/analysis-class-diagram.puml`](deliverables/uml/analysis-class-diagram.puml) | 分析类图 / 设计类图 | [`analysis-class-diagram.png`](deliverables/render/analysis-class-diagram.png) |
 
 ### 7.3 顺序图
 
-| 文件 | 说明 |
-|---|---|
-| [`deliverables/uml/sequence-topic-review.puml`](deliverables/uml/sequence-topic-review.puml) | 课题申报与审核发布 |
-| [`deliverables/uml/sequence-selection-confirmation.puml`](deliverables/uml/sequence-selection-confirmation.puml) | 学生选题与教师确认 |
-| [`deliverables/uml/sequence-taskbook-approval.puml`](deliverables/uml/sequence-taskbook-approval.puml) | 任务书下达与审批 |
-| [`deliverables/uml/sequence-proposal-review.puml`](deliverables/uml/sequence-proposal-review.puml) | 开题报告审核与评价 |
-| [`deliverables/uml/sequence-midterm-evaluation.puml`](deliverables/uml/sequence-midterm-evaluation.puml) | 中期检查评价 |
-| [`deliverables/uml/sequence-review-assignment.puml`](deliverables/uml/sequence-review-assignment.puml) | 评阅教师分配 |
-| [`deliverables/uml/sequence-score-publish.puml`](deliverables/uml/sequence-score-publish.puml) | 答辩成绩录入与总评发布 |
+| 文件 | 说明 | 渲染图 |
+|---|---|---|
+| [`deliverables/uml/sequence-topic-review.puml`](deliverables/uml/sequence-topic-review.puml) | 课题申报与审核发布 | [`sequence-topic-review.png`](deliverables/render/sequence-topic-review.png) |
+| [`deliverables/uml/sequence-selection-confirmation.puml`](deliverables/uml/sequence-selection-confirmation.puml) | 学生选题与教师确认 | [`sequence-selection-confirmation.png`](deliverables/render/sequence-selection-confirmation.png) |
+| [`deliverables/uml/sequence-taskbook-approval.puml`](deliverables/uml/sequence-taskbook-approval.puml) | 任务书下达与审批 | [`sequence-taskbook-approval.png`](deliverables/render/sequence-taskbook-approval.png) |
+| [`deliverables/uml/sequence-proposal-review.puml`](deliverables/uml/sequence-proposal-review.puml) | 开题报告审核与评价 | [`sequence-proposal-review.png`](deliverables/render/sequence-proposal-review.png) |
+| [`deliverables/uml/sequence-midterm-evaluation.puml`](deliverables/uml/sequence-midterm-evaluation.puml) | 中期检查评价 | [`sequence-midterm-evaluation.png`](deliverables/render/sequence-midterm-evaluation.png) |
+| [`deliverables/uml/sequence-review-assignment.puml`](deliverables/uml/sequence-review-assignment.puml) | 评阅教师分配 | [`sequence-review-assignment.png`](deliverables/render/sequence-review-assignment.png) |
+| [`deliverables/uml/sequence-score-publish.puml`](deliverables/uml/sequence-score-publish.puml) | 答辩成绩录入与总评发布 | [`sequence-score-publish.png`](deliverables/render/sequence-score-publish.png) |
 
 ### 7.4 活动图与状态图
 
-| 文件 | 说明 |
-|---|---|
-| [`deliverables/uml/activity-topic-selection-flow.puml`](deliverables/uml/activity-topic-selection-flow.puml) | 课题与选题流程活动图 |
-| [`deliverables/uml/activity-paper-process-flow.puml`](deliverables/uml/activity-paper-process-flow.puml) | 论文全过程活动图 |
-| [`deliverables/uml/state-topic-lifecycle.puml`](deliverables/uml/state-topic-lifecycle.puml) | 课题状态图 |
-| [`deliverables/uml/state-paper-material-lifecycle.puml`](deliverables/uml/state-paper-material-lifecycle.puml) | 论文材料状态图 |
+| 文件 | 说明 | 渲染图 |
+|---|---|---|
+| [`deliverables/uml/activity-topic-selection-flow.puml`](deliverables/uml/activity-topic-selection-flow.puml) | 课题与选题流程活动图 | [`activity-topic-selection-flow.png`](deliverables/render/activity-topic-selection-flow.png) |
+| [`deliverables/uml/activity-paper-process-flow.puml`](deliverables/uml/activity-paper-process-flow.puml) | 论文全过程活动图 | [`activity-paper-process-flow.png`](deliverables/render/activity-paper-process-flow.png) |
+| [`deliverables/uml/state-topic-lifecycle.puml`](deliverables/uml/state-topic-lifecycle.puml) | 课题状态图 | [`state-topic-lifecycle.png`](deliverables/render/state-topic-lifecycle.png) |
+| [`deliverables/uml/state-paper-material-lifecycle.puml`](deliverables/uml/state-paper-material-lifecycle.puml) | 论文材料状态图 | [`state-paper-material-lifecycle.png`](deliverables/render/state-paper-material-lifecycle.png) |
 
 ### 7.5 系统设计图
 
-| 文件 | 说明 |
-|---|---|
-| [`deliverables/uml/package-diagram.puml`](deliverables/uml/package-diagram.puml) | 包图 |
-| [`deliverables/uml/component-diagram.puml`](deliverables/uml/component-diagram.puml) | 构件图 |
-| [`deliverables/uml/database-er-diagram.puml`](deliverables/uml/database-er-diagram.puml) | 数据库 ER 图 |
-| [`deliverables/uml/deployment-diagram.puml`](deliverables/uml/deployment-diagram.puml) | 部署图 |
+| 文件 | 说明 | 渲染图 |
+|---|---|---|
+| [`deliverables/uml/package-diagram.puml`](deliverables/uml/package-diagram.puml) | 包图 | [`package-diagram.png`](deliverables/render/package-diagram.png) |
+| [`deliverables/uml/component-diagram.puml`](deliverables/uml/component-diagram.puml) | 构件图 | [`component-diagram.png`](deliverables/render/component-diagram.png) |
+| [`deliverables/uml/database-er-diagram.puml`](deliverables/uml/database-er-diagram.puml) | 数据库 ER 图 | [`database-er-diagram.png`](deliverables/render/database-er-diagram.png) |
+| [`deliverables/uml/deployment-diagram.puml`](deliverables/uml/deployment-diagram.puml) | 部署图 | [`deployment-diagram.png`](deliverables/render/deployment-diagram.png) |
 
 ## 8. 当前进度位置
 

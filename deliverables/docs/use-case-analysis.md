@@ -96,12 +96,17 @@
 本阶段对应的用例图文件如下：
 
 ```text
-    deliverables
-    └── uml
-        ├── system-use-case-overview.puml
-        ├── management-use-cases.puml
-        ├── teacher-use-cases.puml
-        └── student-review-defense-use-cases.puml
+deliverables
+  ├── uml
+  │   ├── system-use-case-overview.puml
+  │   ├── management-use-cases.puml
+  │   ├── teacher-use-cases.puml
+  │   └── student-review-defense-use-cases.puml
+  └── render
+      ├── system-use-case-overview.png
+      ├── management-use-cases.png
+      ├── teacher-use-cases.png
+      └── student-review-defense-use-cases.png
 ```
 
 ## 6. 重点用例选择

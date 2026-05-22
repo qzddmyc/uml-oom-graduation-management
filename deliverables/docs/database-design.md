@@ -123,9 +123,11 @@
 ## 7. 数据库设计成果清单
 
 ```text
-    deliverables
-    └── uml
-        └── database-er-diagram.puml
+deliverables
+  ├── uml
+  │   └── database-er-diagram.puml
+  └── render
+      └── database-er-diagram.png
 ```
 
 ## 8. 结论

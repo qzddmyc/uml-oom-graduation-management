@@ -50,50 +50,50 @@
 ### 3.1 实体类
 
 ```text
-    User
-    Role
-    College
-    Major
-    Topic
-    TopicSelection
-    TaskBook
-    ProposalReport
-    MidtermReport
-    ThesisMaterial
-    ReviewAssignment
-    ReviewRecord
-    DefenseGroup
-    DefenseRecord
-    ScoreSheet
-    ArchiveRecord
+User
+Role
+College
+Major
+Topic
+TopicSelection
+TaskBook
+ProposalReport
+MidtermReport
+ThesisMaterial
+ReviewAssignment
+ReviewRecord
+DefenseGroup
+DefenseRecord
+ScoreSheet
+ArchiveRecord
 ```
 
 ### 3.2 边界类
 
 ```text
-    TopicSubmissionPage
-    TopicReviewPage
-    SelectionPage
-    TaskBookApprovalPage
-    ProposalReviewPage
-    MidtermReviewPage
-    ReviewAssignmentPage
-    DefenseScoreEntryPage
-    ScorePublishPage
+TopicSubmissionPage
+TopicReviewPage
+SelectionPage
+TaskBookApprovalPage
+ProposalReviewPage
+MidtermReviewPage
+ReviewAssignmentPage
+DefenseScoreEntryPage
+ScorePublishPage
 ```
 
 ### 3.3 控制类
 
 ```text
-    TopicController
-    SelectionController
-    TaskBookController
-    ProposalController
-    MidtermController
-    ReviewController
-    DefenseController
-    ScoreController
-    StatisticsController
+TopicController
+SelectionController
+TaskBookController
+ProposalController
+MidtermController
+ReviewController
+DefenseController
+ScoreController
+StatisticsController
 ```
 
 ## 4. 核心类属性设计
@@ -129,10 +129,13 @@
 ## 6. 类图成果清单
 
 ```text
-    deliverables
-    └── uml
-        ├── domain-class-diagram.puml
-        └── analysis-class-diagram.puml
+deliverables
+  ├── uml
+  │   ├── domain-class-diagram.puml
+  │   └── analysis-class-diagram.puml
+  └── render
+      ├── domain-class-diagram.png
+      └── analysis-class-diagram.png
 ```
 
 ## 7. 设计结论

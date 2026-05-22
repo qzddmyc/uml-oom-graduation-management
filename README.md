@@ -23,20 +23,21 @@
 
 ```text
 uml-oom-graduation-management
-├── README.md
-├── index.md
-├── deliverables
-│   ├── docs
-│   └── uml
-├── docs
-│   ├── Blueprint.md
-│   ├── Requirement.md
-│   └── Workflow.md
-├── frontend            # 前端项目根目录
-└── plans
-    ├── frontend-page-plan.md
-    ├── project-todo.md
-    └── rough-implementation-plan.md
+ ├── README.md
+ ├── index.md
+ ├── deliverables
+ │   ├── docs
+ │   ├── render
+ │   └── uml
+ ├── docs
+ │   ├── Blueprint.md
+ │   ├── Requirement.md
+ │   └── Workflow.md
+ ├── frontend            # 前端项目根目录
+ └── plans
+     ├── frontend-page-plan.md
+     ├── project-todo.md
+     └── rough-implementation-plan.md
 ```
 
 ## 主要内容
@@ -47,7 +48,8 @@ uml-oom-graduation-management
 - `plans/frontend-page-plan.md`：前端页面与原型规划
 - `plans/project-todo.md`：完整任务清单与进度跟踪
 - `deliverables/docs/`：需求分析、系统设计说明等正式文字成果
-- `deliverables/uml/`：UML、ER 图与部署图等正式图形成果
+- `deliverables/uml/`：PlantUML 源文件目录
+- `deliverables/render/`：由 `.puml` 渲染生成的图片目录
 - `frontend/`：Vue 3 + Mock 数据前端原型代码
 
 ## 当前技术路线
@@ -72,7 +74,20 @@ uml-oom-graduation-management
 2. 首次安装依赖：`npm install`
 3. 执行生产构建：`npm run build`
 4. 构建完成后，静态产物位于 `frontend/dist/`
-5. 如需提交前端打包结果，可将 `frontend/dist/` 作为静态发布文件；如需提交源码演示，则保留整个 `frontend/` 目录
+
+## PlantUML 渲染方式
+
+需要 Linux 环境，以 Ubuntu 为例：
+
+```bash
+sudo apt update
+sudo apt install -y plantuml graphviz fonts-noto-cjk fonts-wqy-zenhei
+fc-cache -fv
+mkdir -p ./deliverables/render
+plantuml -charset UTF-8 -o ../render ./deliverables/uml/*.puml
+```
+
+渲染完成后，生成的图片统一输出到 `deliverables/render/`，文件名与 `deliverables/uml/` 中的 `.puml` 源文件保持一一对应。
 
 ## 说明
 

@@ -25,34 +25,34 @@
 建议后续正式成果按下列目录归档：
 
 ```text
-    deliverables
-    ├── 01-requirement-analysis
-    │   ├── requirement-acquisition-plan.md
-    │   ├── interview-outline.md
-    │   └── problem-analysis.md
-    ├── 02-use-case
-    │   ├── use-case-analysis.md
-    │   ├── use-case-realizations.md
-    │   └── diagrams
-    ├── 03-structure-design
-    │   ├── domain-class-design.md
-    │   ├── database-design.md
-    │   └── diagrams
-    ├── 04-dynamic-design
-    │   └── diagrams
-    ├── 05-system-design
-    │   ├── system-design.md
-    │   ├── deployment-design.md
-    │   └── diagrams
-    ├── 06-interface-design
-    │   ├── frontend-page-plan.md
-    │   ├── prototypes
-    │   └── screenshots
-    ├── 07-report
-    │   └── 学号+姓名.pdf
-    └── 08-presentation
-        ├── 建模汇报X组.pptx
-        └── 建模汇报X组.mp4
+deliverables
+  ├── 01-requirement-analysis
+  │   ├── requirement-acquisition-plan.md
+  │   ├── interview-outline.md
+  │   └── problem-analysis.md
+  ├── 02-use-case
+  │   ├── use-case-analysis.md
+  │   ├── use-case-realizations.md
+  │   └── diagrams
+  ├── 03-structure-design
+  │   ├── domain-class-design.md
+  │   ├── database-design.md
+  │   └── diagrams
+  ├── 04-dynamic-design
+  │   └── diagrams
+  ├── 05-system-design
+  │   ├── system-design.md
+  │   ├── deployment-design.md
+  │   └── diagrams
+  ├── 06-interface-design
+  │   ├── frontend-page-plan.md
+  │   ├── prototypes
+  │   └── screenshots
+  ├── 07-report
+  │   └── 学号+姓名.pdf
+  └── 08-presentation
+      ├── 建模汇报X组.pptx
+      └── 建模汇报X组.mp4
 ```
 
 ## 3. 文件命名规范
@@ -69,6 +69,7 @@
 ### 3.2 图文件命名
 
 - UML 图统一使用 `.puml` 保存 PlantUML 源文件。
+- 渲染后的图片统一放在 `deliverables/render/`，并与 `.puml` 源文件保持同名 `.png`。
 - 文件名采用“图类型 + 业务主题”的结构，例如：
   - `system-use-case-overview.puml`
   - `domain-class-diagram.puml`

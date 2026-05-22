@@ -48,33 +48,33 @@
 ## 4. 当前目录结构（核心部分）
 
 ```text
-   frontend
-    ├── public
-    ├── src
-    │   ├── assets
-    │   ├── components
-    │   │   └── common
-    │   ├── layout
-    │   ├── router
-    │   ├── stores
-    │   ├── views
-    │   │   ├── dashboard
-    │   │   ├── business
-    │   │   ├── public
-    │   │   └── workspace
-    │   ├── api
-    │   ├── mock
-    │   │   ├── modules
-    │   │   ├── data
-    │   │   └── shared.js
-    │   ├── utils
-    │   ├── constants
-    │   ├── styles
-    │   ├── App.vue
-    │   └── main.js
-    ├── package.json
-    ├── vite.config.js
-    └── README.md
+frontend
+  ├── public
+  ├── src
+  │   ├── assets
+  │   ├── components
+  │   │   └── common
+  │   ├── layout
+  │   ├── router
+  │   ├── stores
+  │   ├── views
+  │   │   ├── dashboard
+  │   │   ├── business
+  │   │   ├── public
+  │   │   └── workspace
+  │   ├── api
+  │   ├── mock
+  │   │   ├── modules
+  │   │   ├── data
+  │   │   └── shared.js
+  │   ├── utils
+  │   ├── constants
+  │   ├── styles
+  │   ├── App.vue
+  │   └── main.js
+  ├── package.json
+  ├── vite.config.js
+  └── README.md
 ```
 
 ## 5. 路由与权限设计
@@ -112,58 +112,58 @@ meta: {
 ### 5.3 路由层次
 
 ```text
-    /
-    ├── /login
-    ├── /select-role
-    ├── /403
-    ├── /404
-    ├── /dashboard
-    ├── /profile
-    ├── /notifications
-    ├── /topic
-    │   ├── /topic/list
-    │   ├── /topic/create
-    │   ├── /topic/review
-    │   └── /topic/publish
-    ├── /selection
-    │   ├── /selection/student
-    │   ├── /selection/confirm
-    │   └── /selection/review
-    ├── /taskbook
-    │   ├── /taskbook/detail/:id
-    │   └── /taskbook/approval
-    ├── /proposal
-    │   ├── /proposal/submit
-    │   └── /proposal/review
-    ├── /midterm
-    │   ├── /midterm/submit
-    │   └── /midterm/review
-    ├── /paper
-    │   ├── /paper/draft
-    │   ├── /paper/final
-    │   └── /paper/review
-    ├── /review
-    │   ├── /review/assign
-    │   └── /review/workspace
-    ├── /defense
-    │   ├── /defense/group
-    │   └── /defense/score-entry
-    ├── /score
-    │   ├── /score/summary
-    │   ├── /score/publish
-    │   └── /score/adjustment
-    ├── /statistics
-    │   ├── /statistics/progress
-    │   ├── /statistics/topic
-    │   └── /statistics/score
-    ├── /archive
-    │   ├── /archive/query
-    │   └── /archive/export
-    └── /system
-        ├── /system/users
-        ├── /system/org
-        ├── /system/deadlines
-        └── /system/rules
+/
+├── /login
+├── /select-role
+├── /403
+├── /404
+├── /dashboard
+├── /profile
+├── /notifications
+├── /topic
+│   ├── /topic/list
+│   ├── /topic/create
+│   ├── /topic/review
+│   └── /topic/publish
+├── /selection
+│   ├── /selection/student
+│   ├── /selection/confirm
+│   └── /selection/review
+├── /taskbook
+│   ├── /taskbook/detail/:id
+│   └── /taskbook/approval
+├── /proposal
+│   ├── /proposal/submit
+│   └── /proposal/review
+├── /midterm
+│   ├── /midterm/submit
+│   └── /midterm/review
+├── /paper
+│   ├── /paper/draft
+│   ├── /paper/final
+│   └── /paper/review
+├── /review
+│   ├── /review/assign
+│   └── /review/workspace
+├── /defense
+│   ├── /defense/group
+│   └── /defense/score-entry
+├── /score
+│   ├── /score/summary
+│   ├── /score/publish
+│   └── /score/adjustment
+├── /statistics
+│   ├── /statistics/progress
+│   ├── /statistics/topic
+│   └── /statistics/score
+├── /archive
+│   ├── /archive/query
+│   └── /archive/export
+└── /system
+    ├── /system/users
+    ├── /system/org
+    ├── /system/deadlines
+    └── /system/rules
 ```
 
 ### 5.4 导航策略
@@ -290,23 +290,23 @@ meta: {
 即使前端仅使用 mock 数据，也建议按业务领域拆分 API 模块，以便后续替换真实后端。
 
 ```text
-   frontend
-    └── src
-        └── api
-            ├── auth.js
-            ├── user.js
-            ├── topic.js
-            ├── selection.js
-            ├── taskbook.js
-            ├── proposal.js
-            ├── midterm.js
-            ├── paper.js
-            ├── review.js
-            ├── defense.js
-            ├── score.js
-            ├── statistics.js
-            ├── archive.js
-            └── system.js
+frontend
+  └── src
+      └── api
+          ├── auth.js
+          ├── user.js
+          ├── topic.js
+          ├── selection.js
+          ├── taskbook.js
+          ├── proposal.js
+          ├── midterm.js
+          ├── paper.js
+          ├── review.js
+          ├── defense.js
+          ├── score.js
+          ├── statistics.js
+          ├── archive.js
+          └── system.js
 ```
 
 各模块职责建议如下：
@@ -338,21 +338,21 @@ mock 层建议拆分为两部分：
 推荐结构如下：
 
 ```text
-   frontend
-    └── src
-        └── mock
-            ├── modules
-            │   ├── auth.mock.js
-            │   ├── user.mock.js
-            │   ├── topic.mock.js
-            │   ├── selection.mock.js
-            │   ├── process.mock.js
-            │   ├── review.mock.js
-            │   ├── defense.mock.js
-            │   ├── score.mock.js
-            │   ├── statistics.mock.js
-            │   └── archive.mock.js
-            └── data
+frontend
+  └── src
+      └── mock
+          ├── modules
+          │   ├── auth.mock.js
+          │   ├── user.mock.js
+          │   ├── topic.mock.js
+          │   ├── selection.mock.js
+          │   ├── process.mock.js
+          │   ├── review.mock.js
+          │   ├── defense.mock.js
+          │   ├── score.mock.js
+          │   ├── statistics.mock.js
+          │   └── archive.mock.js
+          └── data
 ```
 
 ## 11. 开发顺序与当前落地情况

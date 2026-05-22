@@ -38,6 +38,7 @@
 ### 1.7 相关顺序图
 
 - `deliverables/uml/sequence-topic-review.puml`
+- `deliverables/render/sequence-topic-review.png`
 
 ## 2. 用例：学生选题与教师确认
 
@@ -75,6 +76,7 @@
 ### 2.7 相关顺序图
 
 - `deliverables/uml/sequence-selection-confirmation.puml`
+- `deliverables/render/sequence-selection-confirmation.png`
 
 ## 3. 用例：任务书下达与审批
 
@@ -110,6 +112,7 @@
 ### 3.7 相关顺序图
 
 - `deliverables/uml/sequence-taskbook-approval.puml`
+- `deliverables/render/sequence-taskbook-approval.png`
 
 ## 4. 用例：开题报告审核与评价
 
@@ -147,6 +150,7 @@
 ### 4.7 相关顺序图
 
 - `deliverables/uml/sequence-proposal-review.puml`
+- `deliverables/render/sequence-proposal-review.png`
 
 ## 5. 用例：中期检查评价
 
@@ -183,6 +187,7 @@
 ### 5.7 相关顺序图
 
 - `deliverables/uml/sequence-midterm-evaluation.puml`
+- `deliverables/render/sequence-midterm-evaluation.png`
 
 ## 6. 用例：评阅教师分配
 
@@ -218,6 +223,7 @@
 ### 6.7 相关顺序图
 
 - `deliverables/uml/sequence-review-assignment.puml`
+- `deliverables/render/sequence-review-assignment.png`
 
 ## 7. 用例：答辩成绩录入与总评发布
 
@@ -255,6 +261,7 @@
 ### 7.7 相关顺序图
 
 - `deliverables/uml/sequence-score-publish.puml`
+- `deliverables/render/sequence-score-publish.png`
 
 ## 8. 用例实现结论
 

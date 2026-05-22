@@ -6,22 +6,22 @@
 
 ```text
 frontend
-├── src
-│   ├── api
-│   ├── assets
-│   ├── components
-│   │   └── common
-│   ├── layout
-│   ├── mock
-│   │   ├── data
-│   │   ├── modules
-│   │   └── shared.js
-│   ├── router
-│   ├── stores
-│   ├── styles
-│   └── views
-├── package.json
-└── vite.config.js
+  ├── src
+  │   ├── api
+  │   ├── assets
+  │   ├── components
+  │   │   └── common
+  │   ├── layout
+  │   ├── mock
+  │   │   ├── data
+  │   │   ├── modules
+  │   │   └── shared.js
+  │   ├── router
+  │   ├── stores
+  │   ├── styles
+  │   └── views
+  ├── package.json
+  └── vite.config.js
 ```
 
 ## 当前已实现内容

@@ -23,23 +23,23 @@
 系统可按以下逻辑层次进行划分：
 
 ```text
-    表现层
-    ├── 登录与角色入口
-    ├── 管理端页面
-    ├── 教师端页面
-    └── 学生端页面
+表现层
+  ├── 登录与角色入口
+  ├── 管理端页面
+  ├── 教师端页面
+  └── 学生端页面
 
-    业务控制层
-    ├── 课题与选题控制
-    ├── 过程材料控制
-    ├── 评阅答辩控制
-    ├── 成绩与统计控制
-    └── 归档与特殊处理控制
+业务控制层
+  ├── 课题与选题控制
+  ├── 过程材料控制
+  ├── 评阅答辩控制
+  ├── 成绩与统计控制
+  └── 归档与特殊处理控制
 
-    数据抽象层
-    ├── API 模块
-    ├── Mock 模块
-    └── 数据对象映射
+数据抽象层
+  ├── API 模块
+  ├── Mock 模块
+  └── 数据对象映射
 ```
 
 ## 3. 模块划分
@@ -67,9 +67,11 @@
 对应图文件：
 
 ```text
-    deliverables
-    └── uml
-        └── package-diagram.puml
+deliverables
+  ├── uml
+  │   └── package-diagram.puml
+  └── render
+      └── package-diagram.png
 ```
 
 ## 5. 构件图设计说明
@@ -88,9 +90,11 @@
 对应图文件：
 
 ```text
-    deliverables
-    └── uml
-        └── component-diagram.puml
+deliverables
+  ├── uml
+  │   └── component-diagram.puml
+  └── render
+      └── component-diagram.png
 ```
 
 ## 6. 技术方案结论
