@@ -4,11 +4,19 @@
 
 ## 项目文件索引
 
-项目文件索引请见：[index.md](./index.md)
+项目文件索引请见：[INDEX.md](./INDEX.md)
 
 ## 前端文件说明
 
 前端说明文件请见：[frontend/README.md](./frontend/README.md)
+
+## 产出映射说明
+
+课程要求与当前产出映射请见：[OUTPUT.md](./OUTPUT.md)
+
+## PPT 规划说明
+
+汇报 PPT 详细规划请见：[PPT.md](./PPT.md)
 
 ## 项目目标
 
@@ -24,7 +32,9 @@
 ```text
 uml-oom-graduation-management
  ├── README.md
- ├── index.md
+ ├── INDEX.md
+ ├── OUTPUT.md
+ ├── PPT.md
  ├── deliverables
  │   ├── docs
  │   ├── render
@@ -37,17 +47,25 @@ uml-oom-graduation-management
  └── plans
      ├── frontend-page-plan.md
      ├── project-todo.md
-     └── rough-implementation-plan.md
+     ├── report-outline.md
+     ├── rough-implementation-plan.md
+     └── ... 其他报告、检查清单与演示材料
 ```
 
 ## 主要内容
 
 - `docs/Requirement.md`：课程要求与本项目需要完成的核心任务
-- `index.md`：仓库导航入口，便于快速定位文档、图和前端原型说明
+- `INDEX.md`：仓库导航入口，便于快速定位文档、图和前端原型说明
+- `OUTPUT.md`：课程要求与当前产出映射表
+- `PPT.md`：逐页汇报 PPT 规划文档
 - `plans/rough-implementation-plan.md`：项目总体粗略规划
 - `plans/frontend-page-plan.md`：前端页面与原型规划
+- `plans/report-outline.md`：设计报告大纲
+- `plans/presentation-outline.md`：汇报 PPT 大纲
+- `plans/demo-script.md`：录屏演示脚本
 - `plans/project-todo.md`：完整任务清单与进度跟踪
 - `deliverables/docs/`：需求分析、系统设计说明等正式文字成果
+- `deliverables/docs/interface-design.md`：界面设计说明
 - `deliverables/uml/`：PlantUML 源文件目录
 - `deliverables/render/`：由 `.puml` 渲染生成的图片目录
 - `frontend/`：Vue 3 + Mock 数据前端原型代码
@@ -61,7 +79,7 @@ uml-oom-graduation-management
 ## 建议工作顺序
 
 1. 先阅读 `docs/Requirement.md`
-2. 再查看 `index.md`
+2. 再查看 `INDEX.md`
 3. 然后查看 `plans/project-todo.md`
 4. 结合 `deliverables/` 与 `frontend/` 理解当前成果
 5. 最后整理设计报告、PPT、截图与录屏材料
