@@ -11,18 +11,15 @@
 5. [`plans/project-todo.md`](plans/project-todo.md)：总任务清单与完成状态
 6. [`plans/rough-implementation-plan.md`](plans/rough-implementation-plan.md)：项目总体粗略规划
 7. [`plans/frontend-page-plan.md`](plans/frontend-page-plan.md)：前端页面规划与当前实现同步
-8. [`plans/report-outline.md`](plans/report-outline.md)：设计报告大纲
-9. [`plans/presentation-outline.md`](plans/presentation-outline.md)：汇报 PPT 大纲
-10. [`plans/demo-script.md`](plans/demo-script.md)：录屏演示脚本
-11. [`frontend/README.md`](frontend/README.md)：前端原型说明与打包步骤
-12. [`deliverables/docs/requirements-analysis.md`](deliverables/docs/requirements-analysis.md)：需求获取与问题分析
-13. [`deliverables/docs/use-case-analysis.md`](deliverables/docs/use-case-analysis.md)：参与者与用例分析
-14. [`deliverables/docs/use-case-realizations.md`](deliverables/docs/use-case-realizations.md)：重点用例实现
-15. [`deliverables/docs/domain-class-design.md`](deliverables/docs/domain-class-design.md)：领域分析与类图设计
-16. [`deliverables/docs/system-design.md`](deliverables/docs/system-design.md)：技术方案、包图与构件图设计
-17. [`deliverables/docs/interface-design.md`](deliverables/docs/interface-design.md)：界面设计说明
-18. [`deliverables/docs/database-design.md`](deliverables/docs/database-design.md)：数据库设计
-19. [`deliverables/docs/deployment-design.md`](deliverables/docs/deployment-design.md)：部署设计与运行环境说明
+8. [`frontend/README.md`](frontend/README.md)：前端原型说明与打包步骤
+9. [`deliverables/docs/requirements-analysis.md`](deliverables/docs/requirements-analysis.md)：需求获取与问题分析
+10. [`deliverables/docs/use-case-analysis.md`](deliverables/docs/use-case-analysis.md)：参与者与用例分析
+11. [`deliverables/docs/use-case-realizations.md`](deliverables/docs/use-case-realizations.md)：重点用例实现
+12. [`deliverables/docs/domain-class-design.md`](deliverables/docs/domain-class-design.md)：领域分析与类图设计
+13. [`deliverables/docs/system-design.md`](deliverables/docs/system-design.md)：技术方案、包图与构件图设计
+14. [`deliverables/docs/interface-design.md`](deliverables/docs/interface-design.md)：界面设计说明
+15. [`deliverables/docs/database-design.md`](deliverables/docs/database-design.md)：数据库设计
+16. [`deliverables/docs/deployment-design.md`](deliverables/docs/deployment-design.md)：部署设计与运行环境说明
 
 ## 2. 根目录说明
 
@@ -64,14 +61,6 @@
 | [`plans/project-todo.md`](plans/project-todo.md) | 项目完整任务清单与当前进度 |
 | [`plans/rough-implementation-plan.md`](plans/rough-implementation-plan.md) | 项目总体规划 |
 | [`plans/frontend-page-plan.md`](plans/frontend-page-plan.md) | 前端页面、路由、权限、组件与开发顺序规划 |
-| [`plans/report-outline.md`](plans/report-outline.md) | 最终设计报告的大纲与章节映射 |
-| [`plans/uml-modeling-chapter-outline.md`](plans/uml-modeling-chapter-outline.md) | UML 建模章节写作提纲 |
-| [`plans/system-design-chapter-outline.md`](plans/system-design-chapter-outline.md) | 系统设计章节写作提纲 |
-| [`plans/presentation-outline.md`](plans/presentation-outline.md) | 汇报 PPT 逐页结构大纲 |
-| [`plans/demo-script.md`](plans/demo-script.md) | 录屏演示脚本 |
-| [`plans/requirement-coverage-checklist.md`](plans/requirement-coverage-checklist.md) | 课程要求覆盖核对表 |
-| [`plans/naming-review-checklist.md`](plans/naming-review-checklist.md) | 图与文档命名规范核对表 |
-| [`plans/content-consistency-checklist.md`](plans/content-consistency-checklist.md) | 图文一致性检查结果 |
 
 ## 6. deliverables 目录
 

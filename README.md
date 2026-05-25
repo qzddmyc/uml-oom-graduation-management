@@ -2,21 +2,13 @@
 
 本仓库用于完成**面向对象建模课程大作业**，项目主题为**毕业设计管理系统**。当前已形成需求分析、UML 建模、数据库设计、部署设计文档，并在 `frontend/` 下实现了可演示的前端原型。
 
-## 项目文件索引
+## 项目文件指引
 
-项目文件索引请见：[INDEX.md](./INDEX.md)
-
-## 前端文件说明
-
-前端说明文件请见：[frontend/README.md](./frontend/README.md)
-
-## 产出映射说明
-
-课程要求与当前产出映射请见：[OUTPUT.md](./OUTPUT.md)
-
-## PPT 规划说明
-
-汇报 PPT 详细规划请见：[PPT.md](./PPT.md)
+- 项目文件索引请见：[INDEX.md](./INDEX.md)
+- 前端说明文件请见：[frontend/README.md](./frontend/README.md)
+- 课程要求与当前产出映射请见：[OUTPUT.md](./OUTPUT.md)
+- 汇报 PPT 详细规划请见：[PPT.md](./PPT.md)
+- 项目整体待办请见：[plans/project-todo.md](./plans/project-todo.md)
 
 ## 项目目标
 
@@ -47,9 +39,7 @@ uml-oom-graduation-management
  └── plans
      ├── frontend-page-plan.md
      ├── project-todo.md
-     ├── report-outline.md
-     ├── rough-implementation-plan.md
-     └── ... 其他报告、检查清单与演示材料
+     └── rough-implementation-plan.md
 ```
 
 ## 主要内容
@@ -60,9 +50,6 @@ uml-oom-graduation-management
 - `PPT.md`：逐页汇报 PPT 规划文档
 - `plans/rough-implementation-plan.md`：项目总体粗略规划
 - `plans/frontend-page-plan.md`：前端页面与原型规划
-- `plans/report-outline.md`：设计报告大纲
-- `plans/presentation-outline.md`：汇报 PPT 大纲
-- `plans/demo-script.md`：录屏演示脚本
 - `plans/project-todo.md`：完整任务清单与进度跟踪
 - `deliverables/docs/`：需求分析、系统设计说明等正式文字成果
 - `deliverables/docs/interface-design.md`：界面设计说明
