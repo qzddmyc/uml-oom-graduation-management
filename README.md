@@ -22,21 +22,21 @@
 ## 仓库结构
 
 ```text
-uml-oom-graduation-management
+uml-oom-graduation-management/
  ├── README.md
  ├── INDEX.md
  ├── OUTPUT.md
  ├── PPT.md
- ├── deliverables
- │   ├── docs
- │   ├── render
- │   └── uml
- ├── docs
+ ├── deliverables/        # 正式设计成果目录
+ │   ├── docs/
+ │   ├── render/
+ │   └── uml/
+ ├── docs/                # 课程要求原文件
  │   ├── Blueprint.md
  │   ├── Requirement.md
  │   └── Workflow.md
- ├── frontend            # 前端项目根目录
- └── plans
+ ├── frontend/            # 前端项目根目录
+ └── plans/               # 核心规划与项目待办
      ├── frontend-page-plan.md
      ├── project-todo.md
      └── rough-implementation-plan.md
