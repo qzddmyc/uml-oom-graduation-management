@@ -165,41 +165,41 @@ onBeforeUnmount(() => {
 
     <div class="app-shell__main">
       <header class="app-shell__header">
-        <div class="header-left">
-          <el-button circle text class="header-icon" @click="handleSidebarToggle">
-            <el-icon>
-              <Fold v-if="sidebarVisible" />
-              <Expand v-else />
-            </el-icon>
-          </el-button>
+        <el-button circle text class="header-icon header-trigger" @click="handleSidebarToggle">
+          <el-icon>
+            <Fold v-if="sidebarVisible" />
+            <Expand v-else />
+          </el-icon>
+        </el-button>
 
-          <div>
+        <div class="header-panel">
+          <div class="header-copy">
             <div class="header-breadcrumb">
               <span>首页</span>
               <span v-for="item in breadcrumbItems" :key="item">/ {{ item }}</span>
             </div>
             <h1>{{ currentRoute?.meta?.title || '系统首页' }}</h1>
           </div>
-        </div>
 
-        <div class="header-right">
-          <el-select
-            :model-value="appStore.currentRole"
-            class="role-select"
-            placeholder="切换角色"
-            @change="handleRoleChange"
-          >
-            <el-option
-              v-for="item in ROLE_OPTIONS"
-              :key="item.key"
-              :label="item.label"
-              :value="item.key"
-            />
-          </el-select>
-          <el-button text class="header-logout" @click="handleLogout">
-            <el-icon><SwitchButton /></el-icon>
-            <span>退出</span>
-          </el-button>
+          <div class="header-right">
+            <el-select
+              :model-value="appStore.currentRole"
+              class="role-select"
+              placeholder="切换角色"
+              @change="handleRoleChange"
+            >
+              <el-option
+                v-for="item in ROLE_OPTIONS"
+                :key="item.key"
+                :label="item.label"
+                :value="item.key"
+              />
+            </el-select>
+            <el-button text class="header-logout" @click="handleLogout">
+              <el-icon><SwitchButton /></el-icon>
+              <span>退出</span>
+            </el-button>
+          </div>
         </div>
       </header>
 
@@ -337,7 +337,7 @@ onBeforeUnmount(() => {
 
 .app-shell__header {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   gap: 20px;
   padding: 22px 28px 18px;
   border-bottom: 1px solid @border-color;
@@ -348,10 +348,22 @@ onBeforeUnmount(() => {
   z-index: 10;
 }
 
-.header-left {
+.header-trigger {
+  flex-shrink: 0;
+}
+
+.header-panel {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
+  min-width: 0;
+  flex: 1;
+}
+
+.header-copy {
+  min-width: 0;
+  flex: 1;
 
   h1 {
     margin: 6px 0 0;
@@ -419,7 +431,24 @@ onBeforeUnmount(() => {
   }
 
   .app-shell__header {
+    align-items: flex-start;
     padding-inline: 20px;
+  }
+
+  .header-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .role-select {
+    width: min(148px, 100%);
   }
 
   .app-shell__content {
