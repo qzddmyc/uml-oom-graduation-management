@@ -16,10 +16,7 @@ const router = createRouter({
 
 router.beforeEach((to, from) => {
   const appStore = useAppStore()
-
-  if (to.fullPath !== from.fullPath) {
-    startProgress()
-  }
+  const shouldStartProgress = to.fullPath !== from.fullPath
 
   document.title = to.meta?.title ? `${to.meta.title} - ${APP_TITLE}` : APP_TITLE
 
@@ -36,6 +33,9 @@ router.beforeEach((to, from) => {
   }
 
   if (to.meta?.isPublic) {
+    if (shouldStartProgress) {
+      startProgress()
+    }
     return true
   }
 
@@ -54,6 +54,10 @@ router.beforeEach((to, from) => {
     return {
       name: 'forbidden',
     }
+  }
+
+  if (shouldStartProgress) {
+    startProgress()
   }
 
   return true
