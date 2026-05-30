@@ -28,6 +28,7 @@
 ├── .github
 ├── deliverables
 │   ├── docs
+│   ├── ppts
 │   ├── render
 │   └── uml
 ├── docs
@@ -67,6 +68,7 @@
 | 文件 | 作用 |
 |---|---|
 | `deliverables/docs/` | 正式文字成果目录 |
+| `deliverables/ppts/` | PPT 与演讲稿成果 |
 | `deliverables/uml/` | PlantUML 源文件目录 |
 | `deliverables/render/` | 由 PlantUML 源文件渲染生成的图片目录 |
 
@@ -83,6 +85,10 @@
 | [`deliverables/docs/interface-design.md`](deliverables/docs/interface-design.md) | 界面信息架构、统一布局、关键页面设计说明 |
 | [`deliverables/docs/database-design.md`](deliverables/docs/database-design.md) | 数据表、字段、关系、ER 图说明 |
 | [`deliverables/docs/deployment-design.md`](deliverables/docs/deployment-design.md) | 部署方案与运行环境说明 |
+
+### 6.2 deliverables/ppts
+
+在此不做过多说明。
 
 ## 7. 前端原型目录
 

@@ -10,6 +10,8 @@
 - 汇报 PPT 详细规划请见：[PPT.md](./PPT.md)
 - 项目整体待办请见：[plans/project-todo.md](./plans/project-todo.md)
 
+\* 汇报使用文件索引：[PPT](./deliverables/ppts/毕业设计管理系统建模汇报最终.pptx)与[演讲稿](./deliverables/ppts/脚本.md)。
+
 ## 项目目标
 
 围绕现有毕业设计管理系统中的问题，重新设计一套更完善的系统，重点包括：
@@ -29,6 +31,7 @@ uml-oom-graduation-management/
  ├── PPT.md
  ├── deliverables/        # 正式设计成果目录
  │   ├── docs/
+ │   ├── ppts/
  │   ├── render/
  │   └── uml/
  ├── docs/                # 课程要求原文件
